@@ -14,8 +14,8 @@ jobs:
       run: |
         cd release
         ls -la
-    - name: Bump version and push tag
-      uses: artmants/code-to-zip@main
+    - name: Github Tag Bump
+      uses: anothrNick/github-tag-action@1.52.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: artmants
