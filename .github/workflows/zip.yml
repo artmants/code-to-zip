@@ -15,6 +15,6 @@ jobs:
         cd release
         ls -la
     - name: Bump version and push tag
-      uses: netskope/code-to-zip@master
+      uses: artmants/code-to-zip@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
