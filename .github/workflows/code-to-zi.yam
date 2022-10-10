@@ -2,7 +2,7 @@ name: MasterDeployCI
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,6 +15,6 @@ jobs:
         cd release
         ls -la
     - name: Bump version and push tag
-      uses: artmants/code-to-zip@master
+      uses: artmants/code-to-zip@main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
