@@ -14,8 +14,23 @@ jobs:
       run: |
         cd release
         ls -la
-    - name: Github Tag Bump
-      uses: anothrNick/github-tag-action@1.52.0
+    - name: Zip Release
+      # You may pin to the exact commit or the version.
+      # uses: TheDoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
+      uses: TheDoctor0/zip-release@0.6.2
+      with:
+        # Filename for archive
+        filename: # default is release.zip
+        # Base path for archive files
+        path: ./release
+        # Working directory before zipping
+        directory: # optional, default is .
+        # List of excluded files / directories
+        exclusions: # optional, default is 
+        # List of excluded files / directories with recursive wildcards (only applies on Windows with `zip` type)
+        recursive_exclusions: # optional, default is 
+        # Tool to use for archiving
+        type: # optional, default is zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         REPO_OWNER: artmants
